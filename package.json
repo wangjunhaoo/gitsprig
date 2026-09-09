@@ -1,0 +1,52 @@
+{
+  "name": "gitsprig",
+  "version": "0.1.0",
+  "description": "轻量独立 Git 桌面客户端，支持部分提交、三栏合并与自定义 AI 提交说明",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "test": "tsc -p tsconfig.tests.json && node --test artifacts/test-output/logic.test.js",
+    "check:format": "prettier --check .",
+    "licenses": "python3 scripts/collect_licenses.py",
+    "check:licenses": "python3 scripts/collect_licenses.py --check",
+    "test:rust": "python3 scripts/test_rust.py",
+    "tauri": "tauri",
+    "desktop": "tauri dev",
+    "bundle": "python3 scripts/package_macos.py"
+  },
+  "dependencies": {
+    "@codemirror/commands": "^6.8.1",
+    "@codemirror/lang-css": "^6.3.1",
+    "@codemirror/lang-html": "^6.4.9",
+    "@codemirror/lang-javascript": "^6.2.4",
+    "@codemirror/lang-json": "^6.0.2",
+    "@codemirror/lang-markdown": "^6.3.3",
+    "@codemirror/lang-python": "^6.2.1",
+    "@codemirror/lang-rust": "^6.0.2",
+    "@codemirror/language": "^6.11.0",
+    "@codemirror/merge": "^6.10.2",
+    "@codemirror/search": "^6.5.10",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.36.8",
+    "@lezer/highlight": "^1.2.3",
+    "@tanstack/react-virtual": "^3.13.12",
+    "@tauri-apps/api": "^2.8.0",
+    "@tauri-apps/plugin-dialog": "^2.4.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.4",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^4.7.0",
+    "prettier": "^3.9.6",
+    "typescript": "^5.9.2",
+    "vite": "^6.3.5"
+  }
+}

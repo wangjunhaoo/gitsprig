@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "GitSprig",
+  "version": "0.1.0",
+  "identifier": "app.gitgui.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "GitSprig · 轻枝",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 1000,
+        "minHeight": 680,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true,
+        "backgroundColor": "#202126"
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self' ipc: http://ipc.localhost; worker-src 'self' blob:; object-src 'none'; base-uri 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "resources": {
+      "../LICENSE": "licenses/LICENSE.txt",
+      "../third-party/NOTICES.txt": "licenses/THIRD-PARTY-NOTICES.txt"
+    },
+    "targets": ["app", "dmg"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "macOS": { "minimumSystemVersion": "14.0", "signingIdentity": "-" },
+    "shortDescription": "专注于改动的轻量 Git 客户端",
+    "category": "DeveloperTool"
+  }
+}

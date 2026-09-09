@@ -10,7 +10,15 @@ Tauri 2 · Rust · React · CodeMirror 6 · [MIT 开源](LICENSE)
 
 支持 macOS 14 及以上的 Apple Silicon 设备。运行时需要 Git 2.40 或更新版本；无需启动 IDE。
 
-![演示仓库中的双栏差异](docs/images/workspace.jpg)
+## 界面预览
+
+**工作区与差异审阅**：左侧选择本次提交内容，中央查看双栏差异，提交说明和 AI 生成入口就在手边。
+
+![GitSprig 工作区：文件选择、双栏差异与提交说明](docs/images/workspace.jpg)
+
+**分支历史与提交详情**：在本地分支、远程分支和标签之间浏览，沿着分支图追踪提交，选中后查看对应文件改动。
+
+![GitSprig 提交历史：分支树、拓扑图与提交差异](docs/images/history.jpg)
 
 截图使用虚构演示仓库。主要功能包括按文件/代码块/行提交、任务分组、分支拓扑图、三栏合并、交互式变基、Stash、工作树，以及兼容 OpenAI 格式的自定义 AI 提交说明。应用不建立项目代码索引。
 

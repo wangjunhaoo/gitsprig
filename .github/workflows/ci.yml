@@ -1,0 +1,51 @@
+name: 代码验证
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: macOS ARM64
+    runs-on: macos-14
+    timeout-minutes: 30
+    env:
+      NODE_ENV: development
+      CARGO_TERM_COLOR: always
+    steps:
+      - name: 获取源码
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # 固定 v6
+        with:
+          persist-credentials: false
+      - name: 准备 Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # 固定 v6
+        with:
+          node-version: '22'
+          cache: npm
+      - name: 准备 Rust 工具链
+        run: rustup toolchain install 1.95.0 --profile minimal --component rustfmt --component clippy
+      - name: 安装前端依赖
+        run: npm ci --include=dev
+      - name: 检查格式
+        run: npm run check:format
+      - name: 构建界面
+        run: npm run build
+      - name: 验证前端逻辑
+        run: npm test
+      - name: 检查 Rust 格式
+        run: cargo fmt --manifest-path src-tauri/Cargo.toml --check
+      - name: 检查 Rust 代码
+        run: cargo clippy --manifest-path src-tauri/Cargo.toml --all-targets --locked -- -D warnings
+      - name: 检查第三方声明
+        run: npm run check:licenses
+      - name: 分批验证 Git 工作流
+        run: npm run test:rust

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "rootDir": "src",
+    "outDir": "artifacts/test-output",
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["node"]
+  },
+  "include": ["src/logic.ts", "src/types.ts", "src/logic.test.ts"]
+}

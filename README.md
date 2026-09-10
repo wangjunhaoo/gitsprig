@@ -73,7 +73,7 @@ GitSprig 围绕这个过程设计。左侧组织变更，中央审阅差异或�
 
 提交说明旁的设置按钮可配置接口地址、任意模型 ID、API Key 和生成偏好，也可在“查找操作”中搜索“AI”。兼容 [OpenAI Chat Completions](https://developers.openai.com/api/reference/resources/chat)：向接口发送 model/messages，读取 choices 中的文本结果。
 
-- 地址可填含版本前缀的 Base URL（例如 https://api.openai.com/v1）或完整的 /chat/completions 地址。远程服务建议使用 HTTPS；本地服务支持 HTTP，且可不填密钥。
+- 地址可填含版本前缀的 Base URL（例如 `https://api.openai.com/v1`）或完整的 /chat/completions 地址。远程服务建议使用 HTTPS；本地服务支持 HTTP，且可不填密钥。
 - AI 配置和 API Key 存入 `~/.gitgui/ai.json`，不使用钥匙串。文件为明文，macOS 下目录权限为 700、文件权限为 600，仅当前用户可读写；密钥不会回传到设置界面。同接口留空保留密钥，勾选“移除”明确删除。更换地址不会自动携带旧接口密钥。
 - 勾选文件、代码块或行后点击“AI 生成”。只发送本次选择的差异及必要上下文，二进制、大文件和子模块只发送文件状态。差异超过 128 KB 时停止，需减少选择。
 - 默认生成简体中文纯文本，也可自定义 Conventional Commits、语言和标题要求。生成结果可以编辑，不会自动提交或推送。
@@ -172,7 +172,7 @@ npm run test:rust
 
 编辑器桥接测试需要允许本机回环连接。Rust 脚本先编译，再分批执行，每批最多 60 秒。GitHub Actions 使用 macOS ARM64 检查格式、构建和测试。
 
-AI 桌面验收可运行 `python3 scripts/ai_mock_server.py --output artifacts/ai-qa`，在应用中将接口设为 http://127.0.0.1:18794/v1，模型名称任意，密钥留空。脚本只监听本机；control.json 可调整响应文本、状态码和延迟，用于验证失败及取消。真实使用时改为自己的模型服务。
+AI 桌面验收可运行 `python3 scripts/ai_mock_server.py --output artifacts/ai-qa`，在应用中将接口设为 `http://127.0.0.1:18794/v1`，模型名称任意，密钥留空。脚本只监听本机；control.json 可调整响应文本、状态码和延迟，用于验证失败及取消。真实使用时改为自己的模型服务。
 
 `scripts/create-fixtures.py` 创建可重复的桌面验收仓库，拒绝覆盖已有目录。`scripts/benchmark.py` 创建一万文件、五万提交的性能仓库，并记录进程冷启动、主进程和新增 WebKit 进程的内存合计。
 

@@ -10,6 +10,8 @@ Tauri 2 · Rust · React · CodeMirror 6 · [MIT 开源](LICENSE)
 
 支持 macOS 14 及以上的 Apple Silicon 设备。运行时需要 Git 2.40 或更新版本；无需启动 IDE。
 
+[下载 macOS 版本](https://github.com/wangjunhaoo/gitsprig/releases/latest) · [安装说明](docs/INSTALL_MACOS.md) · [反馈问题](https://github.com/wangjunhaoo/gitsprig/issues)
+
 ## 界面预览
 
 **工作区与差异审阅**：左侧选择本次提交内容，中央查看双栏差异，提交说明和 AI 生成入口就在手边。
@@ -43,7 +45,9 @@ GitSprig 围绕这个过程设计。左侧组织变更，中央审阅差异或�
 
 ## 使用
 
-可按照下方“开发与验证”从源码运行或构建安装包。打开构建出的 DMG，将 GitSprig 拖入 Applications 后启动；也可直接运行 src-tauri/target/release/bundle/macos/GitSprig.app。
+从 [GitHub Releases](https://github.com/wangjunhaoo/gitsprig/releases/latest) 下载 ARM64 安装包，打开 DMG，将 GitSprig 拖入 Applications 后启动。发行页同时提供源码压缩包、版本清单和 SHA256 校验值。
+
+也可按照下方“开发与验证”从源码运行或构建安装包，直接运行 src-tauri/target/release/bundle/macos/GitSprig.app。
 
 打开应用后选择本地仓库，也可以克隆或初始化新仓库。应用会记住最近仓库、主题、面板尺寸、提交草稿和变更分组。
 

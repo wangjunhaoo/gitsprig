@@ -1,8 +1,8 @@
 # 轻枝 · GitSprig
 
-**只想好好用 Git，不必启动整个 IDE。**
+**进入 Vibe Coding，留住熟悉的 Git 体验。**
 
-GitSprig 是一个独立的轻量 Git 桌面客户端，把查看改动、拆分提交、处理冲突和整理历史放进一个紧凑的工作区。
+GitSprig 是一个为用惯 JetBrains Git 的开发者打造的轻量独立客户端，让熟悉的变更列表、差异审阅和提交操作，继续陪伴新的编码工作流。
 
 “轻枝”里的“枝”对应 Git 分支，“轻”对应独立、轻量。Sprig 意为小枝，希望 Git 操作也能轻巧、顺手。
 
@@ -11,6 +11,18 @@ Tauri 2 · Rust · React · CodeMirror 6 · [MIT 开源](LICENSE)
 支持 macOS 14 及以上的 Apple Silicon 设备。运行时需要 Git 2.40 或更新版本；无需启动 IDE。
 
 [下载 macOS 版本](https://github.com/wangjunhaoo/gitsprig/releases/latest) · [安装说明](docs/INSTALL_MACOS.md) · [反馈问题](https://github.com/wangjunhaoo/gitsprig/issues)
+
+## 为什么做 GitSprig
+
+用了很多年 JetBrains 的 IDE：IntelliJ IDEA、PyCharm、WebStorm。除了写代码，它们内置的 Git 也早已成为习惯：看改动、选代码块、拆分提交、处理冲突，一套操作用下来很顺手。
+
+到了 Vibe Coding 时代，我的日常工作逐渐转向 AI 编码工具，很多时候已经不需要再打开完整的 IDE。但代码写完之后，依然要审阅改动、整理提交和处理分支；这时最想用的，还是那套熟悉的 Git 操作。
+
+于是出现了一个别扭的场景：**为了用 Git，又打开了一个很重的 IDE。** 想找一个独立的 Git GUI，却始终没有找到对自己来说同样顺手的替代品。
+
+所以做了轻枝 GitSprig：把习惯的 Git 工作方式做成一件轻量、独立的工具，让它能和现在使用的 AI 编码工具一起工作。代码在哪里写都可以，审阅和提交依然顺手。
+
+GitSprig 采用熟悉的多面板布局，支持右键菜单和快捷键，为日常审阅、提交与冲突处理提供独立入口。项目为独立实现，与 JetBrains 无隶属或官方合作关系。
 
 ## 界面预览
 
@@ -23,14 +35,6 @@ Tauri 2 · Rust · React · CodeMirror 6 · [MIT 开源](LICENSE)
 ![GitSprig 提交历史：分支树、拓扑图与提交差异](docs/images/history.jpg)
 
 截图使用虚构演示仓库。主要功能包括按文件/代码块/行提交、任务分组、分支拓扑图、三栏合并、交互式变基、Stash、工作树，以及兼容 OpenAI 格式的自定义 AI 提交说明。应用不建立项目代码索引。
-
-## 为什么做 GitSprig
-
-起点是一个日常小问题：很喜欢 JetBrains IDE 里的 Git 操作体验，但有时只是想看一下改动、拆开几笔提交，或者解决一个冲突，不想为此打开整个 IDE，等待项目加载和代码索引。
-
-编辑代码已经有顺手的工具了。Git 操作也应该能独立完成：打开仓库，审阅差异，选好这次要交的内容，然后回去继续写代码。
-
-GitSprig 围绕这个过程设计。左侧组织变更，中央审阅差异或历史，提交说明就在手边；常用操作通过右键菜单和快捷键完成。它是独立实现的开源项目，与 JetBrains 没有隶属或官方合作关系。
 
 ## 有什么值得试一试
 

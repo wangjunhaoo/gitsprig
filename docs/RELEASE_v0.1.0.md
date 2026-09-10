@@ -1,8 +1,12 @@
 # GitSprig v0.1.0
 
-只想好好用 Git，不必启动整个 IDE。
+进入 Vibe Coding，留住熟悉的 Git 体验。
 
-GitSprig 把审阅改动、拆分提交、分支管理和冲突处理放进一个独立的桌面工作区。使用 Tauri + Rust 与系统 WebView，不建立项目代码索引，原创代码采用 MIT 许可证。
+用了多年 IntelliJ IDEA、PyCharm、WebStorm，已经习惯 JetBrains 内置的 Git。到了 Vibe Coding 时代，日常编码逐渐转向 AI 工具，却常常为了审阅改动、整理提交，又打开了很重的 IDE。
+
+一直没找到对自己来说同样顺手的独立 Git GUI，所以做了轻枝 GitSprig：让熟悉的 Git 工作方式可以独立运行，和新的编码工具一起使用。
+
+GitSprig 把审阅改动、拆分提交、分支管理和冲突处理放进一个桌面工作区。使用 Tauri + Rust 与系统 WebView，不建立项目代码索引，原创代码采用 MIT 许可证。项目为独立实现，与 JetBrains 无官方关联。
 
 ## 这个版本有什么
 
